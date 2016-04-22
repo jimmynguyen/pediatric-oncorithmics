@@ -1,0 +1,25 @@
+{
+  "name": "pediatric-oncorithmics",
+  "version": "1.0.0",
+  "description": "Application that takes in MRS data and returns a tumor grade and suggested treatments.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.gatech.edu/jnguyen46/pediatric-oncorithmics.git"
+  },
+  "keywords": [
+    "pediatric oncology",
+    "pediatric brain cancer"
+  ],
+  "author": "Jimmy Nguyen",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-route": "^1.5.5",
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.3"
+  }
+}
