@@ -1,0 +1,22 @@
+{
+  "name": "pediatric-oncorithmics-web-api",
+  "version": "1.0.0",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "cors": "^2.7.1",
+    "express": "^4.10.6",
+    "md5": "^2.0.0",
+    "mysql": "^2.5.4"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "description": "",
+  "main": "server.js",
+  "devDependencies": {},
+  "author": "jimmynguyen",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": "4.1.1"
+  }
+}
