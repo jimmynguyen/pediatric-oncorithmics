@@ -1,0 +1,58 @@
+<div ng-include src="'assets/templates/navbar.html'"></div>
+
+<div class="container" ng-controller="patients_controller">
+	<div class="row clearfix margin-top-50px text-center">
+		<div class="col-sm-12 col-md-12">
+			<h1>Patients</h1>
+		</div>
+		<div class="col-sm-12 col-md-12 margin-top-20px">
+			<table class="table centered table-inverse">
+				<thead class="thead-inverse">
+					<tr>
+						<th>ID</th>
+						<th>Last Uploaded</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody class="text-left">
+					<tr>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="col-sm-12 col-md-12 margin-top-20px">
+			<button class="btn btn-primary" data-toggle="modal" data-target="#addPatientModal">Add Patient</button>
+		</div>
+	</div>
+</div>
+
+<div id="addPatientModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Add Patient</h4>
+            </div>
+            <div class="modal-body text-center">
+                <form>
+                    <fieldset class="form-group">
+                        <label class="sr-only">
+                            Name
+                        </label>
+                        <input type="text"
+                               class="form-control" 
+                               ng-model="patient.name"
+                               placeholder="Name">
+                    </fieldset>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" ng-click="addPatient(patient)">
+                    Add Patient
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

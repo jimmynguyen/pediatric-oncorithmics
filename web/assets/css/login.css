@@ -1,17 +1,10 @@
-body {
-    background: #ddd;
-}
-
 div#div_login {
     border-width: 1px;
     border-style: solid;
     border-color: #ddd;
     border-radius: 10px;
-
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-
     padding: 20px;
-
     margin-top: 50%;
     background: white;
 }
@@ -26,7 +19,7 @@ div#div_login h4 {
     color:#a9a9a9;
 }
 
-div#div_login form#form_login {
+div#div_login form {
     margin-top: 20px;
 }
 
