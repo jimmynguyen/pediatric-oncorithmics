@@ -14,6 +14,16 @@ angular.module('pediatricOncorithmics.routes')
 		controller: 'patients_controller',
 		controllerAs: 'patients'
 	})
+	.when('/patient', {
+		templateUrl: 'assets/templates/patient.html',
+		controller: 'patient_controller',
+		controllerAs: 'patient'
+	})
+	.when('/results', {
+		templateUrl: 'assets/templates/results.html',
+		controller: 'results_controller',
+		controllerAs: 'results'
+	})
 	.otherwise({
 		redirectTo: '/'
 	});

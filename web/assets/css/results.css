@@ -1,0 +1,67 @@
+div#grade {
+	float: left;
+	height: 70px;
+	width: 5px;
+	background: black;
+	margin-top: -10px;
+}
+
+div#gradient {
+	height: 50px;
+	background: red; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(left, #00FF00 , #FF0000); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(right, #00FF00, #FF0000); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(right, #00FF00, #FF0000); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(to right, #00FF00 , #FF0000); /* Standard syntax */
+}
+
+.padding-0px {
+	padding: 0;
+}
+
+.circle {
+	border-radius: 50%;
+	width: 150px;
+	height: 150px;
+	background: #00FF00;
+	font-size:40px;
+	line-height:150px;
+	margin: 0 auto;
+	/* width and height can be anything, as long as they're equal */
+}
+
+.margin-bottom-50px {
+	margin-bottom: 50px;
+}
+
+/* graphing */
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.legend rect {
+  fill:white;
+  stroke:black;
+  opacity:0.8;
+}
+
+.tick text{
+	font-size: 12px;
+}
+
+.tick line{
+	opacity: 0.2;
+}

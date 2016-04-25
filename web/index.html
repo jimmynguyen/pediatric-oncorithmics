@@ -7,9 +7,13 @@
 		<link type="text/css" rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
 		<link type="text/css" rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css"/>
 
+		<!-- jquery.tipsy css -->
+		<link type="text/css" rel="stylesheet" href="node_modules/jquery.tipsy/src/jquery.tipsy.css"/>
+
 		<!-- custom css -->
 		<link type="text/css" rel="stylesheet" href="assets/css/style.css"/>
 		<link type="text/css" rel="stylesheet" href="assets/css/login.css"/>
+		<link type="text/css" rel="stylesheet" href="assets/css/results.css"/>
 	</head>
 	<body ng-app="pediatricOncorithmics">
 	    <div ng-view></div>
@@ -20,6 +24,9 @@
 		<!-- angular js -->
 		<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
 
+		<!-- angular-cookies js -->
+		<script type="text/javascript" src="node_modules/angular-cookies/angular-cookies.min.js"></script>
+		
 		<!-- angular-route js -->
 		<script type="text/javascript" src="node_modules/angular-route/angular-route.min.js"></script>
 		
@@ -29,12 +36,25 @@
 		<!-- bootstrap js -->
 		<script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
+		<!-- jquery.tipsy js -->
+		<script type="text/javascript" src="node_modules/jquery.tipsy/src/jquery.tipsy.js"></script>
+
+		<!-- d3 js -->
+    	<script type="text/javascript" src="node_modules/d3/d3.min.js"></script>
+    	
+    	<!-- d3 legend js -->
+    	<script type="text/javascript" src="assets/js/third-party/d3js/d3.legend.js"></script>
+
 		<!-- custom js -->
 		<script type="text/javascript" src="assets/js/app.js"></script>
 		<script type="text/javascript" src="assets/js/routes.js"></script>
+		<script type="text/javascript" src="assets/js/directives.js"></script>
+		<script type="text/javascript" src="assets/js/services.js"></script>
 
 		<script type="text/javascript" src="assets/js/controllers/navbar.js"></script>
 		<script type="text/javascript" src="assets/js/controllers/login.js"></script>
+		<script type="text/javascript" src="assets/js/controllers/patient.js"></script>
 		<script type="text/javascript" src="assets/js/controllers/patients.js"></script>
+		<script type="text/javascript" src="assets/js/controllers/results.js"></script>
 	</body>
 </html>

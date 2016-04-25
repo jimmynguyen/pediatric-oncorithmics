@@ -5,23 +5,28 @@
 		<div class="col-sm-12 col-md-12">
 			<h1>Patients</h1>
 		</div>
+        <div id="div_patients_message" class="col-sm-12 col-md-12 text-center">
+        </div>
 		<div class="col-sm-12 col-md-12 margin-top-20px">
-			<table class="table centered table-inverse">
+			<table class="table centered table-striped">
 				<thead class="thead-inverse">
 					<tr>
 						<th>ID</th>
 						<th>Last Uploaded</th>
-						<th></th>
 					</tr>
 				</thead>
 				<tbody class="text-left">
-					<tr>
+					<tr ng-if="patients.length > 0" ng-repeat="patient in patients" ng-click="goToPatient(patient)" style="cursor:pointer;">
+                        <td>{{patient.name}}</td>
+                        <td></td>
 					</tr>
+                    <tr ng-if="patients.length == 0"><td colspan="2" class="text-center">You do not have any patients</td></tr>
 				</tbody>
 			</table>
 		</div>
 		<div class="col-sm-12 col-md-12 margin-top-20px">
-			<button class="btn btn-primary" data-toggle="modal" data-target="#addPatientModal">Add Patient</button>
+			<button class="btn btn-info" data-toggle="modal" data-target="#searchPatientModal">Search Patient</button>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#addPatientModal">Add Patient</button>
 		</div>
 	</div>
 </div>
@@ -42,15 +47,46 @@
                         </label>
                         <input type="text"
                                class="form-control" 
-                               ng-model="patient.name"
+                               ng-model="patientAdd.name"
                                placeholder="Name">
                     </fieldset>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" ng-click="addPatient(patient)">
+                <button type="button" class="btn btn-primary" ng-click="addPatient(patientAdd)">
                     Add Patient
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="searchPatientModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Search Patient</h4>
+            </div>
+            <div class="modal-body text-center">
+                <form>
+                    <fieldset class="form-group">
+                        <label class="sr-only">
+                            Name
+                        </label>
+                        <input type="text"
+                               class="form-control" 
+                               ng-model="patientSearch.name"
+                               placeholder="Name">
+                    </fieldset>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" ng-click="searchPatient(patientSearch)">
+                    Search
                 </button>
             </div>
         </div>

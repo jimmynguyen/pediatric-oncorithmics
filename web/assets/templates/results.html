@@ -1,0 +1,73 @@
+<div ng-include src="'assets/templates/navbar.html'"></div>
+
+<div class="container">
+    <div class="row clearfix margin-top-50px text-center">
+        <div class="col-sm-12 col-md-12">
+            <h1>Results</h1>
+        </div>
+    </div>
+    <div class="row clearfix margin-top-20px text-center">
+        <div class="col-sm-12 col-md-12 text-left">
+            <h4>Grade Classification</h4>
+        </div>
+        <div class="col-sm-12 col-md-12 margin-top-20px">
+            <div id="gradient" class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                <div id="grade">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-12 margin-top-20px">
+            <div class="col-sm-1 col-md-1 col-sm-offset-1 col-md-offset-2 padding-0px text-left">
+                Normal
+            </div>
+            <div class="col-sm-3 col-md-2 padding-0px text-center">
+                Grade 1
+            </div>
+            <div class="col-sm-2 col-md-2 padding-0px text-center">
+                Grade 2
+            </div>
+            <div class="col-sm-3 col-md-2 padding-0px text-center">
+                Grade 3
+            </div>
+            <div class="col-sm-1 col-md-1 padding-0px text-right">
+                Grade 4
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-12 margin-top-20px text-left">
+            {{grade}}
+        </div>
+    </div>
+    <div class="row clearfix margin-top-20px text-center">
+        <div class="col-sm-12 col-md-12 text-left">
+            <h4>Confidence Interval</h4>
+        </div>
+        <div class="col-sm-12 col-md-12 margin-top-20px">
+            <div class="circle">
+                95%
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix margin-top-20px text-center">
+        <div class="col-sm-12 col-md-12 text-left">
+            <h4>Suggested Treatment</h4>
+        </div>
+        <div class="col-sm-12 col-md-12 text-left">
+            {{treatment}}
+        </div>
+    </div>
+    <div id="advancedView" class="row clearfix margin-top-20px text-center">
+        <div class="col-sm-12 col-md-12 text-left">
+            <h4>MRS Graph</h4>
+        </div>
+        <div class="col-sm-12 col-md-12 text-left">
+        </div>
+    </div>
+    <div class="row clearfix margin-top-50px text-center margin-bottom-50px">
+        <div class="col-sm-12 col-md-12 text-center">
+            <button type="button" class="btn btn-primary" ng-click="toggleAdvancedView()">
+                {{buttonText}}
+            </button>
+        </div>
+    </div>
+    </div>
+</div>

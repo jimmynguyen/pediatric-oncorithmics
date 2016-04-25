@@ -1,0 +1,63 @@
+<div ng-include src="'assets/templates/navbar.html'"></div>
+
+<div class="container" ng-controller="patient_controller">
+    <div class="row clearfix margin-top-50px text-center">
+        <div class="col-sm-12 col-md-12">
+            <h1>Patient</h1>
+            <br/>
+            <h4>ID: {{patientName}}</h4>
+        </div>
+        <div id="div_patient_message" class="col-sm-12 col-md-12 text-center">
+        </div>
+        <div class="col-sm-12 col-md-12 margin-top-20px">
+            <table class="table centered table-striped">
+                <thead class="thead-inverse">
+                    <tr>
+                        <th>Date Uploaded</th>
+                        <th>Tumor Grade Classification</th>
+                    </tr>
+                </thead>
+                <tbody class="text-left">
+                    <tr ng-if="data.length > 0" ng-repeat="datum in data" ng-click="goToResults(datum)" style="cursor:pointer;">
+                        <td>{{datum.date}}</td>
+                        <td>{{datum.grade}}</td>
+                    </tr>
+                    <tr ng-if="data.length == 0 || data === undefined"><td colspan="2" class="text-center">You have not uploaded any MRS data</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-12 col-md-12 margin-top-20px">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#uploadModal">Upload MRS File</button>
+        </div>
+    </div>
+</div>
+
+<div id="uploadModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Upload New MRS File</h4>
+            </div>
+            <div class="modal-body text-center">
+                <form>
+                    <fieldset class="form-group">
+                        <label class="sr-only">
+                            File Upload
+                        </label>
+                        <input type="file"
+                               class="form-control" 
+                               file-model="file">
+                    </fieldset>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" ng-click="uploadFile(file)">
+                    Upload
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
