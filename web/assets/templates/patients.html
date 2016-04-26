@@ -18,7 +18,7 @@
 				<tbody class="text-left">
 					<tr ng-if="patients.length > 0" ng-repeat="patient in patients" ng-click="goToPatient(patient)" style="cursor:pointer;">
                         <td>{{patient.name}}</td>
-                        <td></td>
+                        <td>{{patient.date}}</td>
 					</tr>
                     <tr ng-if="patients.length == 0"><td colspan="2" class="text-center">You do not have any patients</td></tr>
 				</tbody>

@@ -64,7 +64,7 @@ module.exports.searchByDoctorId = function(request, response, connectionPool) {
         } else {
             var doctor_id = request.params.doctor_id;
 
-            var query = "select * from patient where doctor_id = ?";
+            var query = "select * from patient p join mrs_file m on p.name = m.patient_name where p.doctor_id = ? and m.date = (select max(date) from mrs_file where patient_name = p.name)";
 
             connection.query(query, [doctor_id], function(error,rows){
                 connection.release();

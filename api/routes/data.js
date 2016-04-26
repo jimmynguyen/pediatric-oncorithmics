@@ -77,18 +77,20 @@ module.exports.upload = function(request, response, connectionPool, fft) {
                 amplitude = JSON.stringify(dataset.amplitude),
                 frequency = JSON.stringify(dataset.frequency);
 
-            var query = "insert into mrs_file (date,patient_name,data,l2,l1,naa,cr,cho,amplitude,frequency) values (NOW(),?,?,?,?,?,?,?,?,?)";
+            connection.query("select grade from mrs_file where l2 = ? and l1 = ? and naa = ?",[l2,l1,naa],function(error,results) {
+                var query = "insert into mrs_file (date,grade,patient_name,data,l2,l1,naa,cr,cho,amplitude,frequency) values (NOW(),?,?,?,?,?,?,?,?,?,?)";
 
-            connection.query(query, [name,data,l2,l1,naa,cr,cho,amplitude,frequency], function(error, results) {
-                connection.release();
-                if (!error) {
-                    response.json({"code" : 200, "status" : "Success", "id" : results.insertId})
-                    return;
-                } else {
-                    response.json({"code" : 500, "status" : "Error in database query"});
-                    return;
-                }
-            });
+                connection.query(query, [results[0].grade,name,data,l2,l1,naa,cr,cho,amplitude,frequency], function(error, results) {
+                    connection.release();
+                    if (!error) {
+                        response.json({"code" : 200, "status" : "Success", "id" : results.insertId})
+                        return;
+                    } else {
+                        response.json({"code" : 500, "status" : "Error in database query"});
+                        return;
+                    }
+                });
+            })
         }
     });
 }

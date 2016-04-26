@@ -74,8 +74,9 @@ angular.module('pediatricOncorithmics.controllers')
         .success(function(response) {
             $scope.data = response;
             var date_options = {
-                weekday: "long", year: "numeric", month: "short",
-                day: "numeric", hour: "2-digit", minute: "2-digit"
+                weekday: "long", year: "numeric", month: "long",
+                day: "numeric", hour: "2-digit", minute: "2-digit",
+                second: "2-digit"
             };
             for (var i = 0, date; i < $scope.data.length; i++) {
                 date = new Date($scope.data[i].date);
@@ -87,6 +88,10 @@ angular.module('pediatricOncorithmics.controllers')
     $scope.goToResults = function(datum) {
         $cookies.putObject('mrs_file_id',datum.id);
         $location.path('/results');
+    }
+    
+    $scope.backToPatients = function(datum) {
+        $location.path('/patients');
     }
 
     /*************************************************

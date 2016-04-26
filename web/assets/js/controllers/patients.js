@@ -12,6 +12,15 @@ angular.module('pediatricOncorithmics.controllers')
 		$http.get(API_URL + '/patient/doctor/' + $cookies.getObject('user').id)
 		.success(function(response) {
 	        $scope.patients = response;
+            var date_options = {
+                weekday: "long", year: "numeric", month: "long",
+                day: "numeric", hour: "2-digit", minute: "2-digit",
+                second: "2-digit"
+            };
+            for (var i = 0, date; i < $scope.patients.length; i++) {
+                date = new Date($scope.patients[i].date);
+                $scope.patients[i].date = date.toLocaleDateString('en-us',date_options);
+            }
 		});	
 	}
 
@@ -55,6 +64,9 @@ angular.module('pediatricOncorithmics.controllers')
 	}
 
 	$scope.goToPatient = function(patient) {
+		patient = {
+			name: patient.name
+		};
 		$cookies.putObject('patient',patient);
 		$location.path('/patient');
 	}

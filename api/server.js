@@ -3,8 +3,9 @@ var express        = require("express"),
     cors           = require('cors'),
     body_parser    = require('body-parser'),
     md5            = require('md5'),
-    app            = express(),
     fft            = require('fft'),
+    kmeans         = require('node-kmeans'),
+    app            = express(),
     connectionPool = mysql.createPool({
         connectionLimit : 100, //important
         host     : 'localhost',

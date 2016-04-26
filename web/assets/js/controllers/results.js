@@ -222,6 +222,8 @@ angular.module('pediatricOncorithmics.controllers')
 	            .attr("data-style-padding",10)
 	            .call(d3.legend);
 	    },1000);
+
+	    $('.legend-box').addClass('hide');
 	}
 
 	$scope.toggleAdvancedView = function() {
@@ -231,6 +233,11 @@ angular.module('pediatricOncorithmics.controllers')
 		} else {
 			$scope.buttonText = 'Show More';
 		}
+	}
+
+	$scope.backToPatient = function() {
+		$cookies.remove('mrs_file_id');
+		$location.path('/patient');
 	}
 
 	/*************************************************
