@@ -4,11 +4,7 @@ angular.module('pediatricOncorithmics.controllers')
 
 .controller('login_controller', function($scope, $location, $http, $cookies) {
 
-	/*************************************************
-	 * Initialize
-	 ************************************************/
-	var API_URL = 'http://localhost:3000';
-	$('body').css('background','#ddd');
+	$cookies.putObject('API_URL','http://localhost:3000');
 
 	/*************************************************
 	 * Define scope functions
@@ -43,5 +39,12 @@ angular.module('pediatricOncorithmics.controllers')
 			$('#createAccountModal').modal('toggle');
 		});
 	}
+
+	/*************************************************
+	 * Initialize
+	 ************************************************/
+	var API_URL = $cookies.getObject('API_URL');
+	
+	$('body').css('background','#ddd');
 
 });

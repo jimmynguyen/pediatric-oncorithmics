@@ -97,7 +97,7 @@ angular.module('pediatricOncorithmics.controllers')
     /*************************************************
      * Initialize
      ************************************************/
-    var API_URL = 'http://localhost:3000';
+    var API_URL = $cookies.getObject('API_URL');
     $('.modal-backdrop').fadeOut();
     $('body').removeClass('modal-open');
 

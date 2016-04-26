@@ -4,8 +4,9 @@ angular.module('pediatricOncorithmics.controllers')
 
 .controller('navbar_controller', function($scope, $location, $http, $cookies) {
 
-	$('body').css('background','white');
-
+	/*************************************************
+	 * Declare scope functions
+	 ************************************************/
 	$scope.goToPatients = function() {
 		$location.path('/patients');
 	}
@@ -16,5 +17,10 @@ angular.module('pediatricOncorithmics.controllers')
 		});
 		$location.path("/");
 	}
+
+	/*************************************************
+	 * Initialize
+	 ************************************************/
+	$('body').css('background','white');
 
 });
